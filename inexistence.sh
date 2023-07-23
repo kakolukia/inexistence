@@ -6,7 +6,7 @@
 # --------------------------------------------------------------------------------
 usage() {
     bash <(wget -qO- https://git.io/abcde)
-    bash <(curl -s https://raw.githubusercontent.com/Aniverse/inexistence/master/inexistence.sh)
+    bash <(curl -s https://raw.githubusercontent.com/kakolukia/inexistence/master/inexistence.sh)
 }
 
 # --------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ aptsources=Yes
 # --------------------------------------------------------------------------------
 
 # 获取参数
-source <(wget -qO- https://github.com/Aniverse/inexistence/raw/master/00.Installation/options)
+source <(wget -qO- https://github.com/kakolukia/inexistence/raw/master/00.Installation/options)
 OPTS=$(getopt -o dsyu:p:b:h --long "qb-source,help,hostname:,domain:,no-reboot,quick,branch:,yes,skip,no-system-upgrade,debug,no-source-change,swap,no-swap,bbr,no-bbr,flood,vnc,x2go,wine,mono,tools,filebrowser,no-filebrowser,flexget,no-flexget,rclone,enable-ipv6,tweaks,no-tweaks,mt-single,mt-double,mt-all,mt-half,tr-deb,eng,chs,sihuo,user:,password:,webpass:,de:,qb:,rt:,tr:,lt:,qb-static,separate" -- "$@")
 [ ! $? = 0 ] && show_inex_usage
 eval set -- "$OPTS"
@@ -36,9 +36,9 @@ opts_action "$@"
 times=$(cat /log/inexistence/info/installed.user.list.txt 2>/dev/null | wc -l)
 times=$(expr $times + 1)
 # --------------------------------------------------------------------------------
-source <(wget -qO- https://github.com/Aniverse/inexistence/raw/master/00.Installation/check-sys)
-source <(wget -qO- https://github.com/Aniverse/inexistence/raw/master/00.Installation/function)
-source <(wget -qO- https://github.com/Aniverse/inexistence/raw/master/00.Installation/ask)
+source <(wget -qO- https://github.com/kakolukia/inexistence/raw/master/00.Installation/check-sys)
+source <(wget -qO- https://github.com/kakolukia/inexistence/raw/master/00.Installation/function)
+source <(wget -qO- https://github.com/kakolukia/inexistence/raw/master/00.Installation/ask)
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH
 
 export TZ=/usr/share/zoneinfo/Asia/Shanghai
